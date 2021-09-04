@@ -1,0 +1,66 @@
+a
+{
+    color: black;
+    padding: 20px;
+}
+
+a:hover
+{
+    color:black;
+}
+
+body
+{
+    text-align: center;
+}
+
+.image
+{
+    position: absolute;
+    left: 0;
+}
+
+.links
+{
+    padding: 10px;
+    font-size: x-large;
+}
+
+nav
+{
+    background-color: gray;
+    text-align: center;
+}
+
+.resume
+{
+    list-style-position: inside;
+}
+
+
+
+#bottom
+{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    font-family: sans-serif;
+}
+
+
+
+@media only screen and (max-width: 2560px)
+{
+    .links
+    {
+        word-spacing: 300px;
+    }
+}
+
+@media only screen and (max-width: 1440px)
+{
+    .links
+    {
+        word-spacing: 100px;
+    }
+}

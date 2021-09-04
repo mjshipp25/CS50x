@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+        <link href="styles.css" rel="stylesheet">
+        <title>Frank's Webpage</title>
+        <script>
+        // Randomly picks a website and creats a link to it
+            function tips()
+            {
+               let MAX = 5;
+               let num = Math.floor(Math.random() * (MAX + 1));
+               if (num == 0)
+               {
+                    let btn = document.createElement("a");
+                    btn.setAttribute('href', "https://www.youtube.com/watch?v=A-QSz4R7mR0");
+                    btn.innerHTML = "Click Me!";
+                    document.body.appendChild(btn);
+               }
+               else if (num == 1)
+               {
+                    let btn = document.createElement("a");
+                    btn.setAttribute('href', "https://www.scienceabc.com/social-science/what-is-a-cashiers-check-definition-safety.html");
+                    btn.innerHTML = "Click Me!";
+                    document.body.appendChild(btn);
+               }
+               else if (num == 2)
+               {
+                    let btn = document.createElement("a");
+                    btn.setAttribute('href', "https://en.wikipedia.org/wiki/Frank_Abagnale");
+                    btn.innerHTML = "Click Me!";
+                    document.body.appendChild(btn);
+               }
+               else if (num == 3)
+               {
+                    let btn = document.createElement("a");
+                    btn.setAttribute('href', "https://www.youtube.com/watch?v=3UmcxQto7UU");
+                    btn.innerHTML = "Click Me!";
+                    document.body.appendChild(btn);
+               }
+               else if (num == 4)
+               {
+                    let btn = document.createElement("a");
+                    btn.setAttribute('href', "https://www.youtube.com/watch?v=mEHngx2GDpM");
+                    btn.innerHTML = "Click Me!";
+                    document.body.appendChild(btn);
+               }
+               else if (num == MAX)
+               {
+                    let btn = document.createElement("a");
+                    btn.setAttribute('href', "https://www.youtube.com/watch?v=_RzLP4Z4UJQ");
+                    btn.innerHTML = "Click Me!";
+                    document.body.appendChild(btn);
+               }
+            }
+        </script>
+    </head>
+
+    <body>
+        <nav>
+            <h1>Frank William Abagnale <a href="resume.html"><img class="image" alt="arrows" src="arrows.png" width=400></a></h1>
+            <h4>Welcome to my homepage!</h4>
+            <h5>Catch me if you can...</h5>
+            <div class="links">
+                <a href="index.html">Home</a>
+                <a href="resume.html">Resume</a>
+                <a href="story.html">Story</a>
+                <a href="friends.html">Friends</a>
+            </div>
+        </nav>
+        <div>
+            <h3>Hello, My name is Frank William Abagnale</h3>
+            <br>
+            <img alt="Frank Home Page" src="frankHome.jpg">
+            <br>
+            <form action="https://www.netflix.com">
+                <button id="bottom">Watch my story</button>
+            </form>
+            <p>I stole over $10 Million before I was 20</p>
+            <button onclick=tips()>Here's how </button>
+        </div>
+    </body>
+</html>

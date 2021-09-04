@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+
+        <script>
+            // TODO: Add code to check answers to questions
+            function right(btnID)
+            {
+                var button = document.getElementById(btnID);
+                button.style.backgroundColor = "green";
+                document.querySelector(".feedback1").innerHTML = 'Correct!';
+            }
+
+            function wrong(btnID)
+            {
+                var button = document.getElementById(btnID);
+                button.style.backgroundColor = "red";
+                document.querySelector(".feedback1").innerHTML = 'Incorrect';
+
+            }
+
+            function check()
+            {
+                var answer = document.getElementById("response");
+                if (answer.value.toLowerCase() == "linux")
+                {
+                    answer.style.backgroundColor = "green";
+                    document.querySelector(".feedback2").innerHTML = 'Correct!';
+                }
+                else
+                {
+                    answer.style.backgroundColor = "red";
+                    document.querySelector(".feedback2").innerHTML = 'Incorrect';
+                }
+            }
+        </script>
+
+    </head>
+    <body>
+
+        <div class="jumbotron">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+
+                <!-- TODO: Add multiple choice question here -->
+                <h3>What type of architechture does the Ryzen 5000 series of CPUs run on?</h3>
+
+                <button onclick="wrong(this.id)" id="btn1">Coffee Lake</button>
+                <button onclick="right(this.id)" id="btn2">Zen 3</button>
+                <button onclick="wrong(this.id)" id="btn3">Haswell</button>
+                <button onclick="wrong(this.id)" id="btn4">Zen 5</button>
+
+                <h4 class="feedback1"></h4>
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+
+                <!-- TODO: Add free response question here -->
+                <h3>What is the best operating system?</h3>
+
+                <input type="text" id="response">
+                <input type="submit" value="Submit" onclick="check()">
+
+                <h4 class="feedback2"></h4>
+            </div>
+
+        </div>
+    </body>
+</html>
