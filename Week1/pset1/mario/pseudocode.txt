@@ -1,0 +1,5 @@
+1. Prompt user for height
+    1. check if height is between 1 and 8
+    2. if height is not reprompt for height
+2. Prints pyramid
+    1. print n# \n
