@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quoted
+{% endblock %}
+
+{% block main %}
+    <div class="section">
+        <table>
+            <thead>
+                <tr>
+                    <th>{{ company.symbol }}</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{ company.name }} costs {{ company.price | usd }} per 1 share.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

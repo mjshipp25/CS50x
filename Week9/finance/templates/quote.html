@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quote
+{% endblock %}
+
+{% block main %}
+    <form action="/quote" method="post">
+        <input autofocus autocomplete="off" name="symbol" placeholder="Symbol" type="text">
+        <button name="submit" type="submit">Quote</button>
+    </form>
+{% endblock %}
