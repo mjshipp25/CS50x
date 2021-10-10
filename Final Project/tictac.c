@@ -14,7 +14,7 @@ void setup();
 // Gameboard
 char BOARD[9] = {'1', '2', '3', '4', '5', '6', '7', '8', '9'};
 
-// Backup board for resetin game
+// Backup board for reseting game
 char BOARDcpy[9] = {'1', '2', '3', '4', '5', '6', '7', '8', '9'};
 
 
