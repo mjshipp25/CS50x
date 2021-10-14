@@ -5,7 +5,7 @@
 #include <string.h>
 
 
-#define stdin (__acrt_iob_func(0))
+// #define stdin (__acrt_iob_func(0))
 
 
 void gameMode();
@@ -41,7 +41,7 @@ int currentRound;
 int main() {
     // Sets the gamemode
     gameMode();
-    
+
     // Sets up player's pieces
     setup();
 
@@ -71,7 +71,7 @@ void setup(){
     printf("Would you like to play as X or O: ");
     scanf(" %c", &player1);
     player1 = toupper(player1);
-    printf("Player 1 is: %c\n", player1);  
+    printf("Player 1 is: %c\n", player1);
     currentRound = 0;
 }
 
@@ -102,7 +102,7 @@ void playGame() {
         while (desiredMove == '\n') {
             scanf("%c", &desiredMove);
         }
-        
+
         found = updateBoard(desiredMove, currentPlayer);
         totalMoves++;
 
@@ -114,7 +114,14 @@ void playGame() {
             renderBoard(BOARD);
             printf("%c Wins!\n", currentPlayer);
         }
-
+        
+        // Checks for ties
+        if (!win && totalMoves == 9)
+        {
+            printf("Tie game! Both players are losers!\n");
+            win = true;
+        }
+        
         // Updates which player is next up
         if (nextPlayer == player1 && found == 0) {
             nextPlayer = player2;
@@ -125,7 +132,7 @@ void playGame() {
             currentPlayer = player2;
         }
     }
-    
+
     // Sets up a new game
     if (win) {
         if (strncmp(gamemode, "tournament", strlen("tournament")) == 0)
@@ -148,9 +155,9 @@ void playGame() {
             else{
                 printf("%c won the tournament", nextPlayer);
             }
-            
+
         }
-        else 
+        else
         {
             char vote;
             printf("Would you like to play again? (Y/N)");
@@ -200,7 +207,7 @@ bool checkWin(char player, int moves) {
         for (int i = 0; i < 9 && win == false; i += 3) {
             if (BOARD[i] == player && BOARD[i + 1] == player && BOARD[i + 2] == player) {
                 win = true;
-                
+
             }
             else {
                 win = false;
@@ -211,7 +218,7 @@ bool checkWin(char player, int moves) {
         for (int i = 0; i < 3 && win == false; i++) {
             if (BOARD[i] == player && BOARD[i + 3] == player && BOARD[i + 6] == player) {
                 win = true;
-                
+
             }
             else {
                 win = false;
@@ -231,11 +238,11 @@ bool checkWin(char player, int moves) {
             }
             if (winSequence[0] == playedSequence[0] && winSequence[1] == playedSequence[1] && winSequence[2] == playedSequence[2]) {
                 win = true;
-            }    
+            }
         }
-        
-        
-        
+
+
+
         // Checks for positive sloping diagonal win condition
         if (win == false){
             char winSequence[3] = {player, player, player}; // winSequence -> {player, player, player}
@@ -248,7 +255,7 @@ bool checkWin(char player, int moves) {
             }
             if (winSequence[0] == playedSequence[0] && winSequence[1] == playedSequence[1] && winSequence[2] == playedSequence[2]) {
                 win = true;
-            }    
+            }
         }
     }
     return win;
